@@ -5,7 +5,13 @@ $(document).ready(function(){
     $.get("http://127.0.0.1:5000/rummikub/move", function(data, status){
       // alert("Data: " + data + "\nStatus: " + status);
       var data_parsed = JSON.parse(data)
-      hand = data_parsed["Player"]
+      console.log(data_parsed)
+      hand = data_parsed["Player"].sort(function(a, b) {
+        a = a[0];
+        b = b[0];
+
+        return a < b ? -1 : (a > b ? 1 : 0);
+      });
       gameboard = data_parsed["Gameboard"]
 
       for(i=0;i<hand.length; i++){
