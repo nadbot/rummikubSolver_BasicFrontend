@@ -275,3 +275,10 @@ textarea {
   padding-left: 20px;
   font-size: 30px;
 }
+
+.street {
+  width: 500px;
+  height: 140px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
